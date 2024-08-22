@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    
+    // Đọc số lượng từ
+    scanf("%d", &n);
+
+    // Duyệt qua từng từ
+    for (int i = 0; i < n; i++) {
+        char word[101];
+        
+        // Đọc từ
+        scanf("%s", word);
+        
+        // Tính độ dài của từ bằng cách thủ công
+        int length = 0;
+        while (word[length] != '\0') {
+            length++;
+        }
+
+        // Nếu từ dài hơn 10 ký tự thì rút gọn
+        if (length > 10) {
+            printf("%c%d%c\n", word[0], length - 2, word[length - 1]);
+        } else {
+            // Nếu không, in ra từ gốc
+            printf("%s\n", word);
+        }
+    }
+
+    return 0;
+}
